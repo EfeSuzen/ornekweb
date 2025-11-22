@@ -368,4 +368,75 @@
                     </section>
 
                     {/* Contact Section */}
-                    <section id
+                    <section id="iletisim" className="py-24 relative">
+                        <div className="container mx-auto px-6 max-w-4xl text-center">
+                            <h2 className="text-3xl font-bold mb-8">Benimle İletişime Geçin</h2>
+                            <p className="text-slate-400 mb-12">
+                                Projeler, iş birlikleri veya sadece tanışmak için bana ulaşabilirsiniz.
+                            </p>
+                            
+                            <div className="grid md:grid-cols-3 gap-6 text-left">
+                                <a href="mailto:efesuzen05@gmail.com" className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-all group">
+                                    <Icons.Mail className="w-8 h-8 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
+                                    <h3 className="font-medium text-slate-200">Email</h3>
+                                    <p className="text-sm text-slate-400 mt-1">efesuzen05@gmail.com</p>
+                                </a>
+
+                                <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-all group">
+                                    <Icons.Phone className="w-8 h-8 text-emerald-400 mb-4 group-hover:scale-110 transition-transform" />
+                                    <h3 className="font-medium text-slate-200">Telefon</h3>
+                                    <p className="text-sm text-slate-400 mt-1">+90 542 633 25 55</p>
+                                </div>
+
+                                <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-all group">
+                                    <Icons.MapPin className="w-8 h-8 text-rose-400 mb-4 group-hover:scale-110 transition-transform" />
+                                    <h3 className="font-medium text-slate-200">Konum</h3>
+                                    <p className="text-sm text-slate-400 mt-1">Lüleburgaz / İstanbul</p>
+                                </div>
+                            </div>
+
+                            <div className="mt-16 border-t border-slate-800 pt-8 flex justify-center space-x-6">
+                                <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
+                                    <Icons.Linkedin size={24} />
+                                </a>
+                                <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
+                                    <Icons.Github size={24} />
+                                </a>
+                            </div>
+                            <p className="mt-8 text-sm text-slate-600">© 2025 Efe Süzen. Tüm hakları saklıdır.</p>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        const SkillBar = ({ name, level }) => (
+            <div>
+                <div className="flex justify-between mb-1">
+                    <span className="font-medium text-slate-200">{name}</span>
+                    <span className="text-sm text-slate-400">%{level}</span>
+                </div>
+                <div className="w-full bg-slate-700 rounded-full h-2">
+                    <div 
+                        className="bg-blue-500 h-2 rounded-full transition-all duration-1000" 
+                        style={{ width: `${level}%` }}
+                    ></div>
+                </div>
+            </div>
+        );
+
+        const TimelineItem = ({ date, title, subtitle, desc }) => (
+            <div className="relative pl-8 pb-2">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-blue-500"></div>
+                <div className="text-xs font-bold text-blue-400 mb-1">{date}</div>
+                <h3 className="text-lg font-bold text-slate-100">{title}</h3>
+                <div className="text-sm font-medium text-slate-300 mb-2">{subtitle}</div>
+                <p className="text-slate-400 text-sm">{desc}</p>
+            </div>
+        );
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Portfolio />);
+    </script>
+</body>
+</html>
